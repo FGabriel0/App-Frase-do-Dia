@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View,Image } from 'react-native';
 import { frases } from './Frase';
 
 export default function App() {
@@ -13,8 +13,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.frase}>Frase do Dia</Text>
-
+      <Image
+        style={styles.Logo}
+        source={require('./src/assets/logo.png')}
+      />
       <TouchableOpacity style={styles.button} onPress={gerarNovaFrase}>
         <Text style={styles.textobotao}>Nova Frase</Text>
         </TouchableOpacity>
@@ -45,5 +47,8 @@ const styles = StyleSheet.create({
     color:"white",
     fontSize:16,
     fontWeight:"bold"
+  },
+  Logo:{
+    display:"flex"
   }
 });
